@@ -1,0 +1,38 @@
+<?php
+					$sql = "SELECT * FROM tbluser";
+					$result = mysqli_query($newCon->connection, $sql);
+					if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+						echo "id: " . $row["id"]. " - Name: " . $row["firstName"]. " " . $row["lastName"]. "<br>";
+                        }
+					}
+;?>
+
+<?php
+					$sql = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
+                        VALUES ('larry@gamil.com', 'pass', 'Larry', 'Dale', '1235 La Marque', '8881254', '80000', '4597862')";
+                        $newCon->executeQuery($newCon->connection, $sql);
+										
+;?>
+
+
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $email = $_REQUEST["email"];
+                    $password = $_REQUEST["password"];
+                    $firstName = $_REQUEST["firstName"];
+                    $lastName = $_REQUEST["lastName"];
+                    $address1 = $_REQUEST["address"];
+                    $city = $_REQUEST["city"];
+                    $state = $_REQUEST["state"];
+                    $phone = $_REQUEST["phone"];
+                    $salary = $_REQUEST["salary"];
+                    $ssn = $_REQUEST["ssn"];
+                    $address = $address1." ".$city." ".$state." ";
+                }
+                
+				if ($_POST != array()) {
+                    $sql = "INSERT INTO `tbluser` (email, password, firstName, lastName, address, phone, salary, SSN) 
+                    VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$ssn')";
+                    $newCon->executeQuery($newCon->connection, $sql);
+                }
