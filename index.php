@@ -1,6 +1,6 @@
 <?php 
 	error_reporting(E_ALL ^ E_NOTICE);
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en"><head><title>Employee Portal CST-310</title>
 <link href="/dashboard/stylesheets/normalize.css" rel="stylesheet" type="text/css">
