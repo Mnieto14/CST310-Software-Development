@@ -28,13 +28,13 @@
 <div class="form-row">
 <div class="form-group col-md-12" id="no-padding-left">
 <label for="inputEmail">Email</label>
-<input type="email" class="form-control" id="inputEmail" placeholder="Email" autocomplete="off" name="email" required>
+<input type="email" class="form-control" id="inputEmail" autocomplete="off" name="email" required>
 </div>
 </div>
 <div class="form-row">
 <div class="form-group col-md-12" id="no-padding-left">
 <label for="inputPassword">Password</label>
-<input type="password" class="form-control" id="inputPassword" placeholder="Password" autocomplete="off" name="password" required>
+<input type="password" class="form-control" id="inputPassword" autocomplete="off" name="password" required>
 </div>
 </div>
 <button type="submit" class="btn btn-primary" name="login_user">Submit</button>
@@ -54,7 +54,14 @@ if (isset ($email)) {
 	if (mysqli_num_rows($res) == 1) {
 		session_start();
 		while($row = mysqli_fetch_assoc($res)) {
-			$_SESSION['name'] = $row['firstName'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['password'] = $row['password'];
+			$_SESSION['firstName'] = $row['firstName'];
+			$_SESSION['lastName'] = $row['lastName'];
+			$_SESSION['address'] = $row['address'];
+			$_SESSION['phone'] = $row['phone'];
+			$_SESSION['salary'] = $row['salary'];
+			$_SESSION['SSN'] = $row['SSN'];
 		}
 		
 	header('location: homepage.php'); 

@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employee Portal CST-310</title>
+<title>Employee Homepage</title>
 <link href="/dashboard/stylesheets/normalize.css" rel="stylesheet" type="text/css">
 <link href="/dashboard/stylesheets/all.css" rel="stylesheet" type="text/css">
 <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -24,8 +24,8 @@
 <section class="top-bar-section"><!-- Right Nav Section -->
 </section>
 <ul class="right">
-<li class=""><a href="index.php">Logout</a></li>
-<li class=""><a href="Contact.php">Profile &nbsp;&nbsp;&nbsp;</a></li>
+<li class=""><a href="logout.php">Logout</a></li>
+<li class=""><a href="profile.php">Profile &nbsp;&nbsp;&nbsp;</a></li>
 </ul>
 </div>
 <div id="wrapper">
@@ -38,36 +38,25 @@
 <div style="text-align: center;">
 </div>
 </div>
+<div class="container text-center">
 <?php
 session_start();
-if(isset($_SESSION['name'])) {
-	$value = $_SESSION['name'];
+if(isset($_SESSION['firstName'])) {
+	$firstName = $_SESSION['firstName'];
+	$lastName = $_SESSION['lastName'];
 	echo "<center><h1>Welcome to the Home Page</center></h1>";
 	echo "<center><h2>You are successfully logged in</center></h2>";
-	echo "<center><h2>$value</center></h2>";
+	echo "<h3>$firstName $lastName</h23>";
 }
 else {
-	echo "<center><h1>Welcome to the Home Page</center></h1>";
-	echo "<center><h2>Please log in</h2>";
+	header("Location: index.php");
 }
 ?>
 </div>
 </div>
-<div class="row">
-<div class="large-12 columns">
-<div class="row">
-<div class="large-8 columns">
-<ul class="social">
-<li class="twitter"><a href="https://twitter.com/apachefriends">Follow us on Twitter</a></li>
-<li class="facebook"><a href="https://www.facebook.com">Like us on
-Facebook</a></li>
-<li class="google"><a href="https://plus.google.com/+xampp/posts">Add us to your
-G+ Circles</a></li>
-</ul>
-<ul class="inline-list">
-</ul>
 </div>
-<div class="large-4 columns">
-<p class="text-right"><br>
-</p>
-</body></html>
+<div style="text-align: center;"><br>
+</div>
+<footer> </footer>
+<?php require 'footer.php';?>
+</div></ul></div></body></html>

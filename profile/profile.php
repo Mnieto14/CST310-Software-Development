@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Employee Profile Page</title>
+<title>Employee Portal CST-310</title>
 <link href="/dashboard/stylesheets/normalize.css" rel="stylesheet" type="text/css">
 <link href="/dashboard/stylesheets/all.css" rel="stylesheet" type="text/css">
 <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -36,39 +36,14 @@
 <div style="text-align: center;"></div>
 <div class="large-12 columns">
 <div style="text-align: center;"></div>
+<h1 style="text-align: center;">Profile Page</h1><br>
+<div style="text-align: center;">
 </div>
-<div class="container text-center">
-<?php
-session_start();
-if(isset($_SESSION['firstName'])) {
-	$email = $_SESSION['email'];
-	$password = $_SESSION['password'];
-	$firstName = $_SESSION['firstName'];
-	$lastName = $_SESSION['lastName'];
-	$address = $_SESSION['address'];
-	$phone = $_SESSION['phone'];
-	$salary = $_SESSION['salary'];
-	$SSN = $_SESSION['SSN'];
-	echo "<center><h1>Welcome to Your Profile Page</center></h1>";
-	echo "<h3>Email:  $email</h3>";
-	echo "<h3>Password:   $password</h3>";
-	echo "<h3>First Name:  $firstName</h3>";
-	echo "<h3>Last Name:  $lastName</h3>";
-	echo "<h3>Address:  $address</h3>";
-	echo "<h3>Phone:  $phone</h3>";
-	echo "<h3>Salary:  $salary</h3>";
-	echo "<h3>SSN:  $SSN</h3>";
-	
-}
-else {
-	header("Location: index.php");
-}
-?>
 </div>
 </div>
 </div>
 <div style="text-align: center;"><br>
 </div>
 <footer> </footer>
-<?php require 'footer.php';?>
+<?php require '../footer.php';?>
 </div></ul></div></body></html>
